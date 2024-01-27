@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../styles/table.css';
 
 function Table({ save, setSave }) {
   function handleDelete(indexItem) {
