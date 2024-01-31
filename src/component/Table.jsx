@@ -3,6 +3,7 @@ import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/table.css';
 import { useState } from 'react';
+import EditText from './EditText';
 
 function Table({ save, setSave }) {
   const [modal, setModal] = useState(false);
@@ -12,7 +13,9 @@ function Table({ save, setSave }) {
     setSave(filterIndex);
   }
 
-  function handleModal() {}
+  function handleModal() {
+    setModal(true);
+  }
 
   return (
     <div className="table-container">
@@ -27,14 +30,16 @@ function Table({ save, setSave }) {
         <tbody>
           {save.map((item, index) => (
             <tr key={index}>
-              <td className="td_item">{item} </td>
+              <td className="td_item">
+                {modal === false ? item : modal && <EditText />}
+              </td>
               <td className="td_packed">
                 <div className="div_packed">
                   <input type="checkbox" className="input-packed"></input>
 
                   <button
                     className="button-packed"
-                    // onClick={() => }
+                    onClick={() => handleModal()}
                   >
                     <FontAwesomeIcon icon={faPenToSquare} />
                   </button>
@@ -54,7 +59,7 @@ function Table({ save, setSave }) {
           ))}
         </tbody>
 
-        {/* {modal && <component></component>} */}
+        {/* {modal && <EditText />} */}
       </table>
     </div>
   );
