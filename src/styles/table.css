@@ -3,37 +3,73 @@
   justify-content: center;
   align-items: center;
   margin: 10px 600px;
+  overflow-x: auto;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap');
 
 table {
   width: 100%;
-  border: 1px solid #000;
+  table-layout: fixed;
+  border: 2px solid gray;
+  font-family: 'Dancing Script', cursive;
 }
 
 th,
 td {
   width: 25%;
   text-align: center;
-  border: 1px solid orangered;
-  /* border-collapse: collapse; */
 }
 
 thead {
   background-color: lightsalmon;
 }
 
-.icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  background-color: black;
-}
-
 .notas-input {
   background-color: transparent;
   color: #000;
   border: transparent;
+}
+
+.td_packed {
+  margin: auto;
+  /* border-color: #000; */
+}
+
+.div_packed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-packed {
+  margin: auto 7px;
+}
+
+.input-packed:hover {
+  cursor: pointer;
+  border: green;
+}
+
+.button-packed {
+  background-color: transparent;
+  color: green;
+  border-color: transparent;
+}
+
+.button-packed:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: lightgreen;
+}
+
+tbody tr:nth-child(even) {
+  background-color: greenyellow;
+}
+
+table {
+  background-color: lightgoldenrodyellow;
 }
