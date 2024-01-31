@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Table from './Table';
-
+import '../styles/createList.css';
 function CreateList() {
   const [create, setCreate] = useState('');
 

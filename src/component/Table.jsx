@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../styles/table.css';
+import { useState } from 'react';
 
 function Table({ save, setSave }) {
+  const [modal, setModal] = useState(false);
+
   function handleDelete(indexItem) {
     const filterIndex = save.filter((item, index) => indexItem !== index);
     setSave(filterIndex);
   }
+
+  function handleModal() {}
 
   return (
     <div className="table-container">
@@ -15,18 +21,31 @@ function Table({ save, setSave }) {
           <tr>
             <td>Item</td>
             <td>Packed</td>
-            <td>Notas</td>
+            <td>Note</td>
           </tr>
         </thead>
         <tbody>
           {save.map((item, index) => (
             <tr key={index}>
-              <td>{item} </td>
-              <td>
-                <input type="checkbox"></input>
-                <button onClick={() => handleDelete(index)}>
-                  <FontAwesomeIcon icon={faTrash} />
-                </button>
+              <td className="td_item">{item} </td>
+              <td className="td_packed">
+                <div className="div_packed">
+                  <input type="checkbox" className="input-packed"></input>
+
+                  <button
+                    className="button-packed"
+                    // onClick={() => }
+                  >
+                    <FontAwesomeIcon icon={faPenToSquare} />
+                  </button>
+
+                  <button
+                    onClick={() => handleDelete(index)}
+                    className="button-packed"
+                  >
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </div>
               </td>
               <td>
                 <input className="notas-input" type="text"></input>
@@ -34,6 +53,8 @@ function Table({ save, setSave }) {
             </tr>
           ))}
         </tbody>
+
+        {/* {modal && <component></component>} */}
       </table>
     </div>
   );
