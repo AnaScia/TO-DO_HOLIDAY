@@ -6,15 +6,15 @@ import { useState } from 'react';
 import EditText from './EditText';
 
 function Table({ save, setSave }) {
-  const [modal, setModal] = useState(false);
+  const [change, setChange] = useState({ flag: false, index: null });
 
   function handleDelete(indexItem) {
     const filterIndex = save.filter((item, index) => indexItem !== index);
     setSave(filterIndex);
   }
 
-  function handleModal() {
-    setModal(true);
+  function handleChange(indexItem) {
+    setChange({ ...change, flag: !change.flag, index: indexItem });
   }
 
   return (
@@ -31,7 +31,16 @@ function Table({ save, setSave }) {
           {save.map((item, index) => (
             <tr key={index}>
               <td className="td_item">
-                {modal === false ? item : modal && <EditText />}
+                {change.flag && change.index === index ? (
+                  <EditText
+                    save={save}
+                    setSave={setSave}
+                    index={index}
+                    setChange={setChange}
+                  />
+                ) : (
+                  item
+                )}
               </td>
               <td className="td_packed">
                 <div className="div_packed">
@@ -39,7 +48,7 @@ function Table({ save, setSave }) {
 
                   <button
                     className="button-packed"
-                    onClick={() => handleModal()}
+                    onClick={() => handleChange(index)}
                   >
                     <FontAwesomeIcon icon={faPenToSquare} />
                   </button>
@@ -59,7 +68,7 @@ function Table({ save, setSave }) {
           ))}
         </tbody>
 
-        {/* {modal && <EditText />} */}
+        {/* {change && <EditText />} */}
       </table>
     </div>
   );

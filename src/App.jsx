@@ -1,13 +1,10 @@
 import './App.css';
-import CreateList from './component/CreateList';
+import Packing from './view/Packing';
 
 function App() {
   return (
     <>
-      <div className="title">
-        <h1>Holiday Packing</h1>
-      </div>
-      <CreateList></CreateList>
+      <Packing></Packing>
     </>
   );
 }

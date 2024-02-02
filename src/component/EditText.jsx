@@ -1,12 +1,22 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function EditText() {
+function EditText({ save, setSave, index, setChange }) {
   const [create, setCreate] = useState('');
 
-  function handleClick(e) {
+  function handleInput(e) {
     e.preventDefault();
     setCreate(e.target.value);
+  }
+
+  function handleEdit(index) {
+    const newArray = save.map((item, indexItem) => {
+      if (index === indexItem) {
+        return create;
+      } else return item;
+    });
+    setSave(newArray);
+    setChange(false);
   }
 
   return (
@@ -15,13 +25,10 @@ function EditText() {
         type="text"
         name="edit"
         value={create}
-        onChange={handleClick}
+        onChange={handleInput}
       ></input>
-      <button
-      // onClick={() => setSave([...save, create])}
-      >
-        Edit
-      </button>
+
+      <button onClick={() => handleEdit(index)}>Edit</button>
     </>
   );
 }
@@ -29,6 +36,8 @@ function EditText() {
 EditText.propTypes = {
   save: PropTypes.array,
   setSave: PropTypes.func,
+  index: PropTypes.number,
+  setChange: PropTypes.func,
 };
 
 export default EditText;
