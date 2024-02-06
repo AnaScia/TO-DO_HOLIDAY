@@ -3,16 +3,19 @@ import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/table.css';
 import { useState } from 'react';
+import EditText from './EditText';
 
 function Table({ save, setSave }) {
-  const [modal, setModal] = useState(false);
+  const [change, setChange] = useState({ flag: false, index: null });
 
   function handleDelete(indexItem) {
     const filterIndex = save.filter((item, index) => indexItem !== index);
     setSave(filterIndex);
   }
 
-  function handleModal() {}
+  function handleChange(indexItem) {
+    setChange({ ...change, flag: !change.flag, index: indexItem });
+  }
 
   return (
     <div className="table-container">
@@ -27,14 +30,25 @@ function Table({ save, setSave }) {
         <tbody>
           {save.map((item, index) => (
             <tr key={index}>
-              <td className="td_item">{item} </td>
+              <td className="td_item">
+                {change.flag && change.index === index ? (
+                  <EditText
+                    save={save}
+                    setSave={setSave}
+                    index={index}
+                    setChange={setChange}
+                  />
+                ) : (
+                  item
+                )}
+              </td>
               <td className="td_packed">
                 <div className="div_packed">
                   <input type="checkbox" className="input-packed"></input>
 
                   <button
                     className="button-packed"
-                    // onClick={() => }
+                    onClick={() => handleChange(index)}
                   >
                     <FontAwesomeIcon icon={faPenToSquare} />
                   </button>
@@ -54,7 +68,7 @@ function Table({ save, setSave }) {
           ))}
         </tbody>
 
-        {/* {modal && <component></component>} */}
+        {/* {change && <EditText />} */}
       </table>
     </div>
   );
