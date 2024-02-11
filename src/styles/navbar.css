@@ -32,3 +32,8 @@
   background-color: lightcoral;
   cursor: pointer;
 }
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+}
