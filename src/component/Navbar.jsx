@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className="navbar-container">
+    <nav className="navbar-container">
       <div className="navbar-container-div">
         <h1 className="navbar-container-name">Holiday Baby</h1>
         <FontAwesomeIcon icon={faUmbrellaBeach} size="xl" color="gray" />
@@ -28,7 +28,7 @@ function Navbar() {
           </Link>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
 export default Navbar;

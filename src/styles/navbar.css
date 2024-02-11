@@ -18,7 +18,7 @@
 .navbar-container-list {
   display: flex;
   gap: 10px;
-  margin: 0px 20px;
+  margin: 0 20px;
   color: aliceblue;
 }
 .navbar-container-li {
