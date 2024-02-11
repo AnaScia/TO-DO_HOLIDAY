@@ -1,10 +1,12 @@
 import './App.css';
-import Packing from './view/Packing';
+import Navbar from './component/Navbar';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Packing></Packing>
+      <Navbar />
+      <Outlet />
     </>
   );
 }

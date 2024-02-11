@@ -1,0 +1,39 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  background-image: url('../image/fondo_nubes.jpg');
+  align-items: center;
+}
+
+.navbar-container-div {
+  display: flex;
+  align-items: center;
+}
+.navbar-container-name {
+  margin: 0px 30px;
+  color: orange;
+  -webkit-text-stroke: 1px black;
+}
+
+.navbar-container-list {
+  display: flex;
+  gap: 10px;
+  margin: 0 20px;
+  color: aliceblue;
+}
+.navbar-container-li {
+  list-style: none;
+  margin: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.navbar-container-li:hover {
+  background-color: lightcoral;
+  cursor: pointer;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+}
