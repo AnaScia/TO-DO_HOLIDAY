@@ -5,7 +5,7 @@ import '../styles/table.css';
 import { useState } from 'react';
 import EditText from './EditText';
 
-function Table({ save, setSave }) {
+function Table({ save, setSave, input, column1, column2, column3, children }) {
   const [change, setChange] = useState({ flag: false, index: null });
 
   function handleDelete(indexItem) {
@@ -22,9 +22,9 @@ function Table({ save, setSave }) {
       <table>
         <thead>
           <tr>
-            <td>Item</td>
-            <td>Packed</td>
-            <td>Note</td>
+            <td>{column1}</td>
+            <td>{column2}</td>
+            <td>{column3}</td>
           </tr>
         </thead>
         <tbody>
@@ -44,7 +44,8 @@ function Table({ save, setSave }) {
               </td>
               <td className="td_packed">
                 <div className="div_packed">
-                  <input type="checkbox" className="input-packed"></input>
+                  {/* <input type="checkbox" className="input-packed"></input> */}
+                  {children}
 
                   <button
                     className="button-packed"

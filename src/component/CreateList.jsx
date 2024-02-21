@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Table from './Table';
 import '../styles/createList.css';
 
-function CreateList() {
+function CreateList({ boton, column1, column2, column3, children }) {
   const [create, setCreate] = useState('');
 
   const [save, setSave] = useState([]);
@@ -29,11 +29,18 @@ function CreateList() {
               : setSave([...save, create]);
           }}
         >
-          Create
+          {boton}
         </button>
       </form>
       <div>
-        <Table save={save} setSave={setSave} />
+        <Table
+          save={save}
+          setSave={setSave}
+          column1={column1}
+          column2={column2}
+          column3={column3}
+          children={children}
+        />
       </div>
     </div>
   );
