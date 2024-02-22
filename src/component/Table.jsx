@@ -5,7 +5,7 @@ import '../styles/table.css';
 import { useState } from 'react';
 import EditText from './EditText';
 
-function Table({ save, setSave, input, column1, column2, column3, children }) {
+function Table({ save, setSave, columns, children }) {
   const [change, setChange] = useState({ flag: false, index: null });
 
   function handleDelete(indexItem) {
@@ -22,9 +22,9 @@ function Table({ save, setSave, input, column1, column2, column3, children }) {
       <table>
         <thead>
           <tr>
-            <td>{column1}</td>
-            <td>{column2}</td>
-            <td>{column3}</td>
+            {columns.map((column) => (
+              <td key={column}>{column}</td>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -44,10 +44,7 @@ function Table({ save, setSave, input, column1, column2, column3, children }) {
               </td>
               <td className="td_packed">
                 <div className="div_packed">
-                  {/* <input type="checkbox" className="input-packed"></input> */}
-
                   {children}
-
                   <button
                     className="button-packed"
                     onClick={() => handleChange(index)}
