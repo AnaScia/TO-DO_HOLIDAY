@@ -2,10 +2,11 @@ import CreateList from '../component/CreateList';
 import Table from '../component/Table';
 
 function Packing() {
+  const arrColumna = ['Item', 'Packed', 'Note'];
   return (
     <>
       <h1>Packing</h1>
-      <CreateList boton="create" column1="Item" column2="Packed" column3="Note">
+      <CreateList button="create" columns={arrColumna}>
         {/* le paso como children el input */}
         <input type="checkbox" className="input-packed"></input>
       </CreateList>
