@@ -44,7 +44,6 @@ function Table({ save, setSave, columns, children }) {
               </td>
               <td className="td_packed">
                 <div className="div_packed">
-                  {/* <input type="checkbox" className="input-packed"></input> */}
                   {children}
 
                   <button
