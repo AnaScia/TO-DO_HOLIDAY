@@ -25,7 +25,6 @@ function Table({ save, setSave, columns, children }) {
             {columns.map((column) => (
               <td key={column}>{column}</td>
             ))}
-            {/* <td>{columns}</td> */}
           </tr>
         </thead>
         <tbody>
