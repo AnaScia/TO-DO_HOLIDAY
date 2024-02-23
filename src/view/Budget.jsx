@@ -1,13 +1,22 @@
 import CreateList from '../component/CreateList';
-import '../styles/createList.css';
+import Input from '../component/Input';
+import '../styles/budget.css';
 
 function Budget() {
   const arrColumns = ['Item', 'Edit/Delete', 'Price'];
   return (
-    <>
-      <h1>Budget</h1>
-      <CreateList button="CREATE" columns={arrColumns} />
-    </>
+    <div>
+      <div className="container-inputs">
+        <Input name="Presupuesto" />
+        <Input name="Restante" />
+        <Input name="Gastado hasta ahora" />
+      </div>
+      <CreateList
+        button="Save"
+        columns={arrColumns}
+        className="container-list"
+      />
+    </div>
   );
 }
 

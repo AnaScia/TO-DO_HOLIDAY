@@ -1,5 +1,8 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-image: url('../src/image/fondo_degradado.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
   /* line-height: 1.5;
   font-weight: 400;
 

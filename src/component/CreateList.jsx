@@ -14,14 +14,16 @@ function CreateList({ button, columns, children }) {
 
   return (
     <div className="list-container">
-      <form>
+      <form className="form-container">
         <input
           type="text"
           name="search"
           value={create}
           onChange={handleClick}
+          className="input-form"
         ></input>
         <button
+          className="form-button"
           onClick={(e) => {
             e.preventDefault();
             create === ''

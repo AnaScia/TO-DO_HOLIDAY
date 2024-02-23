@@ -61,7 +61,7 @@ function Table({ save, setSave, columns, children }) {
                 </div>
               </td>
               <td>
-                <input className="notas-input" type="text"></input>
+                <textarea className="notas-input" type="text"></textarea>
               </td>
             </tr>
           ))}
