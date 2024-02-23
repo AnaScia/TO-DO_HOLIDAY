@@ -1,0 +1,8 @@
+.input-div {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  background-color: transparent;
+}

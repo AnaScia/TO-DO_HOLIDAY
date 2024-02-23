@@ -1,0 +1,8 @@
+.container-inputs {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 400px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 17px;
+  padding: 20px;
+}

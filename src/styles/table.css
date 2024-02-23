@@ -13,15 +13,17 @@ table {
   table-layout: fixed;
   border: 2px solid gray;
   font-family: 'Dancing Script', cursive;
+  background-color: lightcoral;
 }
 
 th,
 td {
   width: 25%;
   text-align: center;
+  background-color: rgb(179, 206, 231);
 }
 
-thead {
+thead tr td {
   background-color: lightsalmon;
 }
 
@@ -53,23 +55,11 @@ thead {
 
 .button-packed {
   background-color: transparent;
-  color: green;
+  color: rgb(20, 131, 235);
   border-color: transparent;
 }
 
 .button-packed:hover {
   cursor: pointer;
   background-color: white;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: lightgreen;
-}
-
-tbody tr:nth-child(even) {
-  background-color: greenyellow;
-}
-
-table {
-  background-color: lightgoldenrodyellow;
 }
